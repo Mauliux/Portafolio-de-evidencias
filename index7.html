@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curso 6</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#f4f6f8;
+  color:#333;
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 24px;
+  box-shadow:0 2px 8px rgba(0,0,0,.1);
+  z-index:1000;
+}
+
+.nav-left{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.logo img{
+  width:40px;
+}
+
+.school-name{
+  font-weight:bold;
+  font-size:1rem;
+}
+
+/* ===== DROPDOWN ===== */
+.dropdown{
+  position:relative;
+}
+
+.dropdown-btn{
+  background:#0077cc;
+  color:#fff;
+  border:none;
+  padding:10px 16px;
+  border-radius:4px;
+  cursor:pointer;
+}
+
+.dropdown-btn:hover{
+  background:#005fa3;
+}
+
+.dropdown-content{
+  display:none;
+  position:absolute;
+  right:0;
+  background:#fff;
+  min-width:360px;
+  max-height:300px;
+  overflow-y:auto;
+  box-shadow:0 4px 12px rgba(0,0,0,.15);
+  border-radius:6px;
+}
+
+.dropdown-content a{
+  display:block;
+  padding:12px;
+  text-decoration:none;
+  color:#333;
+  line-height:1.4;
+}
+
+.dropdown-content a:hover{
+  background:#f0f0f0;
+}
+
+.dropdown.show .dropdown-content{
+  display:block;
+}
+
+/* ===== HEADER ===== */
+.course-header{
+  margin-top:90px;
+  background:#0077cc;
+  color:#fff;
+  padding:50px 20px;
+  text-align:center;
+}
+
+/* ===== PROGRESO ===== */
+.progress-container{
+  max-width:900px;
+  margin:40px auto;
+  padding:0 20px;
+}
+
+.progress-text{
+  text-align:center;
+  font-weight:bold;
+  margin-bottom:8px;
+}
+
+.progress-bar{
+  width:100%;
+  height:14px;
+  background:#ddd;
+  border-radius:8px;
+  overflow:hidden;
+}
+
+.progress{
+  height:100%;
+  width:75%;
+  background:#0077cc;
+}
+
+/* ===== EVIDENCIAS ===== */
+.evidence{
+  max-width:1100px;
+  margin:60px auto;
+  padding:20px;
+  display:flex;
+  gap:30px;
+  align-items:center;
+}
+
+.evidence-img img{
+  width:100%;
+  max-width:1000px;
+  border-radius:8px;
+  box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+
+.evidence-text h2{
+  color:#0077cc;
+  margin-bottom:12px;
+}
+
+.evidence-text p{
+  line-height:1.6;
+  text-align:justify;
+}
+
+/* ===== BOTONES ===== */
+.navigation{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  margin:80px 0;
+}
+
+.btn{
+  text-decoration:none;
+  background:#0077cc;
+  color:#fff;
+  padding:14px 22px;
+  border-radius:6px;
+  font-weight:bold;
+}
+
+.btn:hover{
+  background:#005fa3;
+}
+
+/* ===== ANIMACIONES ===== */
+.hidden{
+  opacity:0;
+  transform:translateY(30px);
+}
+
+.show{
+  opacity:1;
+  transform:translateY(0);
+  transition:.8s;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .school-name{display:none;}
+  .evidence{
+    flex-direction:column;
+    text-align:center;
+  }
+  .evidence-text p{
+    text-align:center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<header class="navbar hidden">
+  <div class="nav-left">
+    <div class="logo">
+      <img src="img/logo.jpg" alt="Logo escuela">
+    </div>
+    <span class="school-name">
+      Benemérita y Centenaria Escuela Normal Primaria "Rodolfo Menéndez de la Peña"
+    </span>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropdown-btn">Cursos ▾</button>
+    <div class="dropdown-content">
+        <a href="index2.html">Acercamiento a prácticas educativas y comunitarias</a>
+        <a href="index3.html">Aritmética. Su aprendizaje y su enseñanza</a>
+        <a href="index4.html">Bases filosóficas, legales y organizativas del sistema educativo mexicano</a>
+        <a href="index5.html">Ciencias Naturales. Su aprendizaje y su enseñanza</a>
+        <a href="index6.html">El sujeto y su formación profesional</a>
+        <a href="index7.html">Lenguaje y Comunicación</a>
+        <a href="index8.html">Teorías del desarrollo y aprendizaje</a>
+        <a href="index9.html">Tecnologías digitales para el aprendizaje y la enseñanza</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== TITULO ===== -->
+<section class="course-header hidden">
+  <h1>Lenguaje y Comunicación</h1>
+</section>
+
+<!-- ===== PROGRESO ===== -->
+<div class="progress-container hidden">
+  <div class="progress-text">Curso 6 de 8</div>
+  <div class="progress-bar">
+    <div class="progress"></div>
+  </div>
+</div>
+
+<!-- ===== EVIDENCIA 1 ===== -->
+<section class="evidence hidden">
+  <div class="evidence-img">
+    <img src="img/t11.png" alt="Evidencia 1">
+  </div>
+  <div class="evidence-text">
+    <h2>Evidencia de la unidad ll (infografia)</h2>
+    <p>
+      Realizar esta actividad me ayudó a reflexionar sobre lo aprendido acerca de las prácticas sociales del lenguaje, 
+      así como sobre la importancia de conocerlas y saber definirlas correctamente, ya que la comunicación va más allá de saber hablar y escribir. 
+      Esta actividad, al igual que todas las de este curso, me permitió ver la comunicación desde otro ángulo, 
+      tanto en mi vida personal como en la Escuela Normal y en la escuela primaria.
+    </p>
+  </div>
+</section>
+
+<!-- ===== EVIDENCIA 2 ===== -->
+<section class="evidence hidden">
+  <div class="evidence-img">
+    <img src="img/t12.png" alt="Evidencia 2">
+  </div>
+  <div class="evidence-text">
+    <h2>Lectura de un cuento</h2>
+    <p>
+      Para poder realizar esta actividad, primero tuve que escribir mi propio cuento. 
+      Fue necesario tomar en cuenta muchos aspectos, ya que no solo debía escribir sobre lo que a mí me gustaba, 
+      sino pensar en el lenguaje adecuado para que niños de segundo año de primaria pudieran entenderlo. 
+      También consideré los gustos de los niños de ese grado y, tomando todo esto en cuenta, redacté el cuento. 
+      Leerlo frente al grupo fue una gran experiencia, ya que practiqué el uso de la voz, la interpretación y, sobre todo, 
+      mi habilidad de escritura. Esta actividad también estuvo relacionada con las prácticas y fue de gran ayuda para motivarme a seguir escribiendo cuentos.
+    </p>
+  </div>
+</section>
+
+<!-- ===== NAVEGACION ===== -->
+<div class="navigation hidden">
+  <a href="index.html" class="btn">⬅ Inicio</a>
+  <a href="index8.html" class="btn">Siguiente curso ➡</a>
+</div>
+
+<script>
+/* Animaciones */
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+document.querySelectorAll(".hidden").forEach(el=>observer.observe(el));
+
+/* Dropdown */
+const dropdown = document.querySelector(".dropdown");
+const btn = document.querySelector(".dropdown-btn");
+
+btn.addEventListener("click",()=>{
+  dropdown.classList.toggle("show");
+});
+
+document.addEventListener("click",(e)=>{
+  if(!dropdown.contains(e.target)){
+    dropdown.classList.remove("show");
+  }
+});
+</script>
+
+</body>
+</html>

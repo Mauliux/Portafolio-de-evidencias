@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curso 8</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#f4f6f8;
+  color:#333;
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 24px;
+  box-shadow:0 2px 8px rgba(0,0,0,.1);
+  z-index:1000;
+}
+
+.nav-left{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.logo img{
+  width:40px;
+}
+
+.school-name{
+  font-weight:bold;
+  font-size:1rem;
+}
+
+/* ===== DROPDOWN ===== */
+.dropdown{
+  position:relative;
+}
+
+.dropdown-btn{
+  background:#0077cc;
+  color:#fff;
+  border:none;
+  padding:10px 16px;
+  border-radius:4px;
+  cursor:pointer;
+}
+
+.dropdown-btn:hover{
+  background:#005fa3;
+}
+
+.dropdown-content{
+  display:none;
+  position:absolute;
+  right:0;
+  background:#fff;
+  min-width:360px;
+  max-height:300px;
+  overflow-y:auto;
+  box-shadow:0 4px 12px rgba(0,0,0,.15);
+  border-radius:6px;
+}
+
+.dropdown-content a{
+  display:block;
+  padding:12px;
+  text-decoration:none;
+  color:#333;
+  line-height:1.4;
+}
+
+.dropdown-content a:hover{
+  background:#f0f0f0;
+}
+
+.dropdown.show .dropdown-content{
+  display:block;
+}
+
+/* ===== HEADER ===== */
+.course-header{
+  margin-top:90px;
+  background:#0077cc;
+  color:#fff;
+  padding:50px 20px;
+  text-align:center;
+}
+
+/* ===== PROGRESO ===== */
+.progress-container{
+  max-width:900px;
+  margin:40px auto;
+  padding:0 20px;
+}
+
+.progress-text{
+  text-align:center;
+  font-weight:bold;
+  margin-bottom:8px;
+}
+
+.progress-bar{
+  width:100%;
+  height:14px;
+  background:#ddd;
+  border-radius:8px;
+  overflow:hidden;
+}
+
+.progress{
+  height:100%;
+  width:100%;
+  background:#0077cc;
+}
+
+/* ===== EVIDENCIAS ===== */
+.evidence{
+  max-width:1100px;
+  margin:60px auto;
+  padding:20px;
+  display:flex;
+  gap:30px;
+  align-items:center;
+}
+
+.evidence-img img{
+  width:100%;
+  max-width:1000px;
+  border-radius:8px;
+  box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+
+.evidence-text h2{
+  color:#0077cc;
+  margin-bottom:12px;
+}
+
+.evidence-text p{
+  line-height:1.6;
+  text-align:justify;
+}
+
+/* ===== BOTONES ===== */
+.navigation{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  margin:80px 0;
+}
+
+.btn{
+  text-decoration:none;
+  background:#0077cc;
+  color:#fff;
+  padding:14px 22px;
+  border-radius:6px;
+  font-weight:bold;
+}
+
+.btn:hover{
+  background:#005fa3;
+}
+
+/* ===== ANIMACIONES ===== */
+.hidden{
+  opacity:0;
+  transform:translateY(30px);
+}
+
+.show{
+  opacity:1;
+  transform:translateY(0);
+  transition:.8s;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .school-name{display:none;}
+  .evidence{
+    flex-direction:column;
+    text-align:center;
+  }
+  .evidence-text p{
+    text-align:center;
+  }
+}
+/* ===== REFLEXIÓN FINAL ===== */
+.reflection{
+  max-width:900px;
+  margin:80px auto;
+  padding:30px;
+  background:#fff;
+  border-radius:10px;
+  box-shadow:0 4px 12px rgba(0,0,0,.1);
+}
+
+.reflection h2{
+  color:#0077cc;
+  margin-bottom:16px;
+  text-align:center;
+}
+
+.reflection p{
+  line-height:1.7;
+  text-align:justify;
+  font-size:1.05rem;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<header class="navbar hidden">
+  <div class="nav-left">
+    <div class="logo">
+      <img src="img/logo.jpg" alt="Logo escuela">
+    </div>
+    <span class="school-name">
+      Benemérita y Centenaria Escuela Normal Primaria "Rodolfo Menéndez de la Peña"
+    </span>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropdown-btn">Cursos ▾</button>
+    <div class="dropdown-content">
+        <a href="index2.html">Acercamiento a prácticas educativas y comunitarias</a>
+        <a href="index3.html">Aritmética. Su aprendizaje y su enseñanza</a>
+        <a href="index4.html">Bases filosóficas, legales y organizativas del sistema educativo mexicano</a>
+        <a href="index5.html">Ciencias Naturales. Su aprendizaje y su enseñanza</a>
+        <a href="index6.html">El sujeto y su formación profesional</a>
+        <a href="index7.html">Lenguaje y Comunicación</a>
+        <a href="index8.html">Teorías del desarrollo y aprendizaje</a>
+        <a href="index9.html">Tecnologías digitales para el aprendizaje y la enseñanza</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== TITULO ===== -->
+<section class="course-header hidden">
+  <h1>Tecnologías digitales para el aprendizaje y la enseñanza</h1>
+</section>
+
+<!-- ===== PROGRESO ===== -->
+<div class="progress-container hidden">
+  <div class="progress-text">Curso 8 de 8 — Portafolio completado</div>
+  <div class="progress-bar">
+    <div class="progress"></div>
+  </div>
+</div>
+
+<!-- ===== EVIDENCIA 1 ===== -->
+<section class="evidence hidden">
+  <div class="evidence-img">
+    <img src="img/t15.png" alt="Evidencia 1">
+  </div>
+  <div class="evidence-text">
+    <h2>Creación de Contenidos Digitales (Secuencia de Programación)</h2>
+    <p>
+      Como alguien a quien le gusta la programación, fue interesante conocer esta forma de enseñar fundamentos básicos y desarrollar el pensamiento lógico-matemático, 
+      el cual es fundamental para la programación. Observar esta manera de enseñarlos a los niños mediante juegos llamativos que, a la vez, representen un reto, 
+      me proporcionó una nueva forma de ver y utilizar la programación. Esta actividad, al igual que las demás, me serán de gran utilidad en las escuelas primarias.
+    </p>
+  </div>
+</section>
+
+<!-- ===== EVIDENCIA 2 ===== -->
+<section class="evidence hidden">
+  <div class="evidence-img">
+    <img src="img/t16.png" alt="Evidencia 2">
+  </div>
+  <div class="evidence-text">
+    <h2>Portafolio de evidencias</h2>
+    <p>
+      Sé que puede verse un poco mal, 
+      pero al realizar este portafolio y reflexionar sobre las actividades de cada curso, 
+      pude darme cuenta de muchas cosas que, de no haber sido por este trabajo, 
+      probablemente no habría notado. Me resultó muy importante reflexionar sobre este primer semestre y sobre las actividades de los cursos, 
+      ya que me permitió reconocer los avances que he tenido, no solo como alumno y futuro docente, sino también como persona. 
+      Esto fue algo que me hizo sentir bien durante la elaboración de este portafolio.
+    </p>
+  </div>
+</section>
+<!-- ===== REFLEXIÓN FINAL ===== -->
+<section class="reflection hidden">
+  <h2>Reflexión final</h2>
+  <p>
+    Tengo muchas cosas que mejorar, especialmente en el aspecto social. 
+    Sé que debo perder el miedo a hablar, a participar y a estar frente a un grupo de personas, 
+    pero también reconozco que he estado trabajando en ello y que, poco a poco, he tenido avances. 
+    Esa es mi mayor fortaleza: la motivación por mejorar en aquellos aspectos que sé que son mis debilidades y las ganas de seguir adelante.
+  </p>
+  <p>
+    Como ya mencioné, realizar este portafolio fue una experiencia significativa para mí, 
+    algo que en un principio no imaginaba. Sin embargo, el poder reflexionar sobre este primer semestre y las actividades que lo conformaron fue, 
+    sin duda, un gran aprendizaje y una motivación para seguir adelante. 
+    Si tuviera que volver a hacerlo, no cambiaría nada en cuanto a la información; 
+    únicamente me gustaría mejorar la estructura y agregar más detalles. 
+    Me propuse realizar este portafolio sin ayuda de herramientas externas, desarrollándolo únicamente con HTML, CSS y un poco de JavaScript.
+  </p>
+</section>
+
+
+
+<!-- ===== NAVEGACION ===== -->
+<div class="navigation hidden">
+  <a href="index.html" class="btn">⬅ Volver al inicio</a>
+</div>
+
+<script>
+/* Animaciones */
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+document.querySelectorAll(".hidden").forEach(el=>observer.observe(el));
+
+/* Dropdown */
+const dropdown = document.querySelector(".dropdown");
+const btn = document.querySelector(".dropdown-btn");
+
+btn.addEventListener("click",()=>{
+  dropdown.classList.toggle("show");
+});
+
+document.addEventListener("click",(e)=>{
+  if(!dropdown.contains(e.target)){
+    dropdown.classList.remove("show");
+  }
+});
+</script>
+
+</body>
+</html>

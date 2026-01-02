@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso 3</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f8;
+            color: #333;
+        }
+
+        /* ================= NAVBAR ================= */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
+            width: 40px;
+        }
+
+        .school-name {
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        /* DROPDOWN */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-btn {
+            background-color: #0077cc;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .dropdown-btn:hover {
+            background-color: #005fa3;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: white;
+            min-width: 340px;
+            max-height: 300px;
+            overflow-y: auto;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-radius: 6px;
+            z-index: 1000;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 12px;
+            text-decoration: none;
+            color: #333;
+            white-space: normal;
+            line-height: 1.4;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .dropdown.show .dropdown-content {
+            display: block;
+        }
+
+        /* ================= HEADER DEL CURSO ================= */
+        .course-header {
+            margin-top: 90px;
+            background-color: #0077cc;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .course-header h1 {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        /* ================= PROGRESO ================= */
+        .progress-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .progress-text {
+            margin-bottom: 8px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 14px;
+            background-color: #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            width: 37.5%; /* Curso 3 de 8 */
+            background-color: #0077cc;
+        }
+
+        /* ================= EVIDENCIAS ================= */
+        .evidence {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 20px;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .evidence-img img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .evidence-text {
+            flex: 1;
+        }
+
+        .evidence-text h2 {
+            margin-bottom: 12px;
+            color: #0077cc;
+        }
+
+        .evidence-text p {
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        /* ================= BOTONES ================= */
+        .navigation {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 80px 0;
+        }
+
+        .btn {
+            text-decoration: none;
+            background-color: #0077cc;
+            color: white;
+            padding: 14px 22px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #005fa3;
+        }
+
+        /* ================= ANIMACIONES ================= */
+        .hidden {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.8s ease;
+        }
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 768px) {
+            .school-name {
+                display: none;
+            }
+
+            .evidence {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .evidence-text p {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar hidden">
+        <div class="nav-left">
+            <div class="logo">
+                <img src="img/logo.jpg" alt="Logo">
+            </div>
+            <span class="school-name">
+                Benemérita y Centenaria Escuela Normal Primaria "Rodolfo Menéndez de la Peña"
+            </span>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropdown-btn">Cursos ▾</button>
+            <div class="dropdown-content">
+                <a href="index2.html">Acercamiento a prácticas educativas y comunitarias</a>
+                <a href="index3.html">Aritmética. Su aprendizaje y su enseñanza</a>
+                <a href="index4.html">Bases filosóficas, legales y organizativas del sistema educativo mexicano</a>
+                <a href="index5.html">Ciencias Naturales. Su aprendizaje y su enseñanza</a>
+                <a href="index6.html">El sujeto y su formación profesional</a>
+                <a href="index7.html">Lenguaje y Comunicación</a>
+                <a href="index8.html">Teorías del desarrollo y aprendizaje</a>
+                <a href="index9.html">Tecnologías digitales para el aprendizaje y la enseñanza</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HEADER CURSO -->
+    <section class="course-header hidden">
+        <h1>Bases filosóficas, legales y organizativas del sistema educativo mexicano</h1>
+    </section>
+
+    <!-- PROGRESO -->
+    <div class="progress-container hidden">
+        <div class="progress-text">Curso 3 de 8</div>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+    </div>
+
+    <!-- EVIDENCIA 1 -->
+    <section class="evidence hidden">
+        <div class="evidence-img">
+            <img src="img/t5.png" alt="Evidencia 1">
+        </div>
+        <div class="evidence-text">
+            <h2>Protocolo y MUAI</h2>
+            <p>
+                Elegir una actividad en este curso fue muy difícil, 
+                ya que considero que la información y los aprendizajes obtenidos en cada una son de gran importancia para una correcta práctica docente. 
+                No obstante, elegí esta actividad, la cual solicita hacer uso del Protocolo de actuación ante situaciones de violencia y del Modelo Único de Atención Integral, 
+                identificando cuál aplicar según el caso, algo que sin duda es de suma importancia para mis prácticas y para la labor docente.
+            </p>
+        </div>
+    </section>
+
+    <!-- EVIDENCIA 2 -->
+    <section class="evidence hidden">
+        <div class="evidence-img">
+            <img src="img/t6.png" alt="Evidencia 2">
+        </div>
+        <div class="evidence-text">
+            <h2>Informe de Prácticas</h2>
+            <p>
+                Esta actividad sí fue un gran reto de realizar y redactar, pero resultó muy útil y de gran ayuda para recolectar información importante sobre las escuelas,
+                 su estructura, clasificación y el papel de los distintos agentes que participan en su funcionamiento, 
+                 entre otros aspectos. La información obtenida me permitió reflexionar sobre la importancia del contexto en el que se encuentran las escuelas primarias y cómo este influye en ellas. 
+                 Al igual que los demás trabajos, esta actividad estuvo relacionada con las prácticas.
+            </p>
+        </div>
+    </section>
+
+    <!-- BOTONES -->
+    <div class="navigation hidden">
+        <a href="index.html" class="btn">⬅ Inicio</a>
+        <a href="index5.html" class="btn">Siguiente curso ➡</a>
+    </div>
+
+    <script>
+        /* Animaciones */
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        });
+
+        document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
+
+        /* Dropdown */
+        const dropdown = document.querySelector('.dropdown');
+        const button = document.querySelector('.dropdown-btn');
+
+        button.addEventListener('click', () => {
+            dropdown.classList.toggle('show');
+        });
+
+        document.addEventListener('click', e => {
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove('show');
+            }
+        });
+    </script>
+
+</body>
+</html>
